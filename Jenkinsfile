@@ -5,7 +5,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '📦 Checking out code...'
-                git 'https://github.com/nekunj44/jetkins_project_p1.git'
             }
         }
 
