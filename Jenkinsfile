@@ -39,7 +39,7 @@ pipeline {
                     echo "pytest executed successfully (check result.log for details)"
                 }
                 // Show last few lines of log
-                bat 'powershell -Command "Get-Content result.log -Tail 15"'
+                bat 'type result.log'
             }
         }
 
