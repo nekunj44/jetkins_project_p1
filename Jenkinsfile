@@ -12,9 +12,11 @@ pipeline {
             steps {
                 echo '⚙️ Manually installing Python libraries...'
                 bat '''
-                    pip install flask
-                    pip install yfinance
-                    pip install pytest
+                    python --version
+                    python -m pip --version
+                    python -m pip install flask
+		    python -m pip install yfinance
+		    python -m pip install pytest
                 '''
             }
         }
