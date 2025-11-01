@@ -43,6 +43,22 @@ pipeline {
             }
         }
 
+	stage('SonarQube Analysis') {
+            steps {
+                echo '🔍 Running SonarQube code analysis...'
+                withSonarQubeEnv('LocalSonar') {
+                    bat '''
+                        sonar-scanner ^
+                          -Dsonar.projectKey=Stock_Price_Viewer ^
+                          -Dsonar.sources=. ^
+                          -Dsonar.host.url=http://localhost:9000 ^
+                          -Dsonar.login=%SONAR_AUTH_TOKEN%
+                    '''
+                }
+            }
+        }
+
+
         stage('Deploy Flask App') {
             steps {
                 echo '🚀 Starting Flask app in background...'
