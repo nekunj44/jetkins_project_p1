@@ -48,7 +48,7 @@ pipeline {
                 echo '🔍 Running SonarQube code analysis...'
                 withSonarQubeEnv('LocalSonar') {
                     bat '''
-                        sonar-scanner ^
+                        "%SONAR_PATH%\\sonar-scanner.bat" ^
                           -Dsonar.projectKey=Stock_Price_Viewer ^
                           -Dsonar.sources=. ^
                           -Dsonar.host.url=http://localhost:9000 ^
