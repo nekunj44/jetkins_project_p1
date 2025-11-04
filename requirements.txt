@@ -1,3 +1,5 @@
 flask
 yfinance
 pytest
+
+sqp_5e934c921abeed9a197a2eb37c6bf0ab5726e7f3
